@@ -2,6 +2,8 @@ import React from "react";
 import { getProduct, getProducts } from "@/service/products";
 import { notFound } from "next/navigation";
 
+// export const revalidate = 3;
+
 type Props = {
   params: {
     slug: string;
@@ -9,7 +11,7 @@ type Props = {
 };
 export default async function ProductPage({ params: { slug } }: Props) {
   const product = await getProduct(slug);
-  
+
   if (!product) {
     notFound();
   }
