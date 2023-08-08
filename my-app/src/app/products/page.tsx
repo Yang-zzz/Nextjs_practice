@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { getProducts } from "@/service/products";
 import MeowArticle from "@/components/MeowArticle";
-import clothesImage from "../../../public/images/profileImage.jpeg";
+import clothesImage from "../../../public/images/clothes.jpg";
 import Image from "next/image";
 
 // export const revalidate = 3;

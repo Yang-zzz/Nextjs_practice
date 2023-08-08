@@ -1,7 +1,7 @@
 import React from "react";
 import { getProduct, getProducts } from "@/service/products";
 import { notFound } from "next/navigation";
-
+import Image from "next/image";
 
 type Props = {
   params: {
@@ -15,7 +15,17 @@ export default async function ProductPage({ params: { slug } }: Props) {
     notFound();
   }
   // 서버 파일에 있는 데이터 중 해당 제품의 정보를 찾아서 나타냄.
-  return <h1>{product.name} 제품 설명 페이지</h1>;
+  return (
+    <>
+      <h1>{product.name} 제품 설명 페이지</h1>;
+      <Image
+        src={`/images/${product.image}`}
+        alt="profile"
+        width="300"
+        height="300"
+      />
+    </>
+  );
 }
 
 // build 시 아래 명시해둔 pants 와 skirt의 HTML틀을 정적으로 만들어 놓는다.
